@@ -1,0 +1,77 @@
+body {
+	font-family: "Segoe UI", Roboto, Verdana, "Dejavu Sans", sans-serif;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+	text-transform: none;
+	font-family: unset;
+	line-height: normal;
+	letter-spacing: normal;
+	font-weight: normal;
+}
+
+h1 {
+	font-size: 1.8rem;
+	color: #666666;
+}
+
+h2 {
+	font-size: 1.6rem;
+	color: #666666;
+}
+
+h3 {
+	font-size: 1.45rem;
+	color: #666666;
+}
+
+h4 {
+	font-size: 1.3rem;
+	color: #888888;
+}
+
+h5 {
+	font-size: 1.15rem;
+	color: #888888;
+}
+
+h6 {
+	font-size: 1.0rem;
+	color: #888888;
+}
+
+pre,
+kbd,
+samp,
+tt,
+var {
+	font-family: "Courier New", Courier, monospace;
+	line-height: normal;
+}
+
+code,
+kbd,
+tt {
+	font-family: Consolas, "Courier New", Courier, monospace;
+	line-height: normal;
+}
+
+var {
+	font-style: italic;
+}
+
+blockquote {
+	font-family: Georgia, "Times New Roman", serif;
+	line-height: normal;
+}
+
+.wp-block-button .wp-block-button__link {
+	margin-top: 0;
+}
+
+

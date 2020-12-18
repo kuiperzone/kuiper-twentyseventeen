@@ -1,0 +1,265 @@
+/*
+Theme Name: KUIPER Twenty Seventeen
+Template: twentyseventeen
+Description: Total configuration over Twenty Seventeen.
+Text Domain: kuiper-twentyseventeen
+Theme URI: https: //kuiper.zone/kuiper-wordpress-theme
+Author: Andy Thomas
+Author URI: https: //kuiper.zone/
+Domain Path: /languages
+Version: 1.0.0
+Requires at least: 4.7
+Requires PHP: 5.2.4
+License: GNU General Public License v3 or later
+License URI: http: //www.gnu.org/licenses/gpl-3.0.html
+*/
+
+/*
+ * BASIC FONT OVERRIDE
+ */
+body,
+button,
+input,
+select,
+textarea {
+	font-family: "Segoe UI", Roboto, Verdana, "Dejavu Sans", sans-serif;
+	font-size: 1.0rem;
+	line-height: normal;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+	text-transform: none;
+	font-family: unset;
+	line-height: normal;
+	letter-spacing: normal;
+	font-weight: normal;
+	font-style: normal;
+}
+
+h1 {
+	font-size: 2.0rem;
+	color: #666666;
+}
+
+h2 {
+	font-size: 1.6rem;
+	color: #666666;
+}
+
+h3 {
+	font-size: 1.45rem;
+	color: #666666;
+}
+
+h4 {
+	font-size: 1.3rem;
+	color: #888888;
+}
+
+h5 {
+	font-size: 1.15rem;
+	color: #888888;
+}
+
+h6 {
+	font-size: 1.0rem;
+	color: #888888;
+}
+
+.colors-dark h1,
+.colors-dark h2,
+.colors-dark h3 {
+	color: #bbbbbb;
+}
+
+.colors-dark h4,
+.colors-dark h5,
+.colors-dark h6 {
+	color: #aaaaaa;
+}
+
+pre,
+kbd,
+samp,
+tt,
+var {
+	font-family: "Courier New", Courier, monospace;
+	line-height: normal;
+}
+
+code,
+kbd,
+tt {
+	font-family: Consolas, "Courier New", Courier, monospace;
+	line-height: normal;
+}
+
+var {
+	font-style: italic;
+}
+
+blockquote {
+	font-family: Georgia, "Times New Roman", serif;
+	line-height: normal;
+}
+
+/* Need selectors to be seperate to work */
+::-webkit-input-placeholder {
+	font-family: unset;
+}
+:-moz-placeholder {
+	font-family: unset;
+}
+::-moz-placeholder {
+	font-family: unset;
+}
+:-ms-input-placeholder {
+	font-family: unset;
+}
+
+/*
+ * STYLING OVERRIDE
+ */
+ 
+ul,
+ol {
+  padding-left: 2em;
+}
+
+.entry-title,
+h2.widget-title {
+	text-transform: none;
+	letter-spacing: normal;
+}
+
+/* Don't vary with font size */
+h2.widget-title {
+	margin-bottom: 6px;
+}
+
+.entry-meta {
+	font-size: 0.8rem;
+	padding-bottom: 0.5em;
+}
+
+blockquote, 
+.wp-block-quote {
+	font-size: 1.2rem;
+}
+
+blockquote cite,
+.wp-block-quote cite {
+	font-size: 1.0rem;
+}
+
+pre,
+.wp-block-preformatted pre,
+.wp-block-preformatted code {
+	padding: 1.6em !important;
+	line-height: normal;
+	white-space: pre;
+	white-space: pre-wrap;
+	word-wrap: break-word;
+}
+
+blockquote,
+.wp-block-quote {
+	margin-left: 1.6em;
+	margin-right: 1.6em;
+}
+
+/* Breaks otherwise in dark colors */
+.wp-block-code {
+	color: unset;
+}
+
+/* Parent margin too big */
+.wp-block-button .wp-block-button__link {
+	margin-top: 0;
+	margin-bottom: 1em;
+}
+
+.wp-block-table.is-style-stripes tbody tr:nth-child(odd) {
+	background-color: #e5e5e5;
+}
+
+.colors-dark .wp-block-table.is-style-stripes tbody tr:nth-child(odd) {
+	background-color: #808080;
+	background-color: rgba(128 ,128, 128, 0.2);
+}
+
+.site-title {
+	text-transform: none;
+}
+
+.site-info {
+	float: none;
+	clear: both;
+	margin-left: 0;
+	margin-right: 0;
+	padding-left: 0;
+	padding-right: 0;
+	width: 100%;
+}
+
+/* Force to left */
+.single-post:not(.has-sidebar) #primary,
+.page.page-one-column:not(.twentyseventeen-front-page) #primary,
+.archive.page-one-column:not(.has-sidebar) .page-header,
+.archive.page-one-column:not(.has-sidebar) #primary {
+	max-width: unset;
+}
+
+/* Remove huge vertical margins */
+.page.page-one-column .entry-header,
+.twentyseventeen-front-page.page-one-column .entry-header,
+.archive.page-one-column:not(.has-sidebar) .page-header {
+	margin-top: 1em;
+	margin-bottom: 1em;
+}
+
+/*
+ * AUTHOR BIO
+ */
+.author-bio {
+	margin-top:2em;
+}
+ 
+ 
+.author-name {
+	font-weight: bold;
+}
+  
+.author-details {
+}
+
+.author-details img {
+	float: left;
+	border-radius: 3px;
+	margin: 0 1em 1em 0;
+}
+
+.author-link {
+}
+
+.author-website {
+}
+
+/*
+ * SCREEN WIDTH
+ * Intention is to support very wide widths
+ */
+@media screen and ( min-width: 67em ) {
+	/* Right hand bar becomes too wide otherwise */
+	.has-sidebar:not(.error404) #primary {
+		width: 66%;
+	}
+	.has-sidebar #secondary {
+		width: 28%;
+	}
+}
