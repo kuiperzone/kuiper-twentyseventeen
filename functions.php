@@ -117,7 +117,7 @@ function child_remove_parent_actions() {
 	// for image resize attributed. If different size, disable these.
 	global $CHILD_GMODS;
 
-	if ($CHILD_GMODS[CHILD_MOD_THEME_MAX_WIDTH] <= 1000) {
+	if ($CHILD_GMODS[CHILD_MOD_THEME_MAX_WIDTH] >= 1000) {
 		remove_filter( 'wp_calculate_image_sizes', 'twentyseventeen_content_image_sizes_attr');
 		remove_filter( 'wp_get_attachment_image_attributes', 'twentyseventeen_post_thumbnail_sizes_attr');
 		remove_action( 'template_redirect', 'twentyseventeen_content_width');
