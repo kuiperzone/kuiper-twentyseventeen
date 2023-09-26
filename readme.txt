@@ -9,7 +9,7 @@ License           : GPLv3 or later
 License URI       : http://www.gnu.org/licenses/gpl-3.0.html
 
 
-== DECSRIPTION ==
+== DESCRIPTION ==
 
 KUIPER Twenty Seventeen is a highly customisable theme for WordPress. It is a child theme of the
 enormously popular Twenty Seventeen but, unlike the parent, it allows you to extend the page width,
