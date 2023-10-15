@@ -20,7 +20,7 @@ $CHILD_MOD_ADVANCED_DEFAULTS = array (
 	CHILD_MOD_THEME_FEATURED_POS => 'default',
 	CHILD_MOD_THEME_FEATURED_HIDE_HOME => false,
 	CHILD_MOD_THEME_META => true,
-	
+
 	CHILD_MOD_URLS_FONT1 => '',
 	CHILD_MOD_URLS_FONT2 => '',
 
@@ -39,7 +39,7 @@ function child_add_advanced_controls($wp_customize, $def) {
 	));
 
 	// About
-	$wp_customize->add_setting('avix-info', array('sanitize_callback' => 'teknomatic_sanitize_label'));
+	$wp_customize->add_setting('avix-info', array('sanitize_callback' => 'child_sanitize_label'));
 	$wp_customize->add_control(new Child_Customize_Info($wp_customize, 'avix-info', array(
 		'section' => $section,
 		'label' => child_get_about_html(),
@@ -57,7 +57,7 @@ function child_add_advanced_controls($wp_customize, $def) {
 		'default' => $def[$id],
 		'sanitize_callback' => 'absint',
 	));
-	$wp_customize->add_control('tkctrl-' . $id, array(
+	$wp_customize->add_control('kpctrl-' . $id, array(
 		'type' => 'number',
 		'settings' => $id,
 		'section' => $section,
@@ -74,7 +74,7 @@ function child_add_advanced_controls($wp_customize, $def) {
 		'default' => $def[$id],
 		'sanitize_callback' => 'child_sanitize_featured_pos',
 	));
-	$wp_customize->add_control('tkctrl-' . $id, array(
+	$wp_customize->add_control('kpctrl-' . $id, array(
 		'type' => 'select',
 		'settings' => $id,
 		'section' => $section,
@@ -88,7 +88,7 @@ function child_add_advanced_controls($wp_customize, $def) {
 		'default' => $def[$id],
 		'sanitize_callback' => 'child_sanitize_check',
 	));
-	$wp_customize->add_control('tkctrl-' . $id, array(
+	$wp_customize->add_control('kpctrl-' . $id, array(
 		'type' => 'checkbox',
 		'settings' => $id,
 		'section' => $section,
@@ -102,7 +102,7 @@ Useful where the image is used to populate the "og:image" meta tag only.', 'kuip
 		'default' => $def[$id],
 		'sanitize_callback' => 'child_sanitize_check',
 	));
-	$wp_customize->add_control('tkctrl-' . $id, array(
+	$wp_customize->add_control('kpctrl-' . $id, array(
 		'type' => 'checkbox',
 		'settings' => $id,
 		'section' => $section,
@@ -142,7 +142,7 @@ Useful where the image is used to populate the "og:image" meta tag only.', 'kuip
 		'default' => $def[$id],
 		'sanitize_callback' => 'child_sanitize_comments',
 	));
-	$wp_customize->add_control('tkctrl-' . $id, array(
+	$wp_customize->add_control('kpctrl-' . $id, array(
 		'type' => 'select',
 		'settings' => $id,
 		'section' => $section,
@@ -156,7 +156,7 @@ Useful where the image is used to populate the "og:image" meta tag only.', 'kuip
 		'default' => $def[$id],
 		'sanitize_callback' => 'child_sanitize_check',
 	));
-	$wp_customize->add_control('tkctrl-' . $id, array(
+	$wp_customize->add_control('kpctrl-' . $id, array(
 		'type' => 'checkbox',
 		'settings' => $id,
 		'section' => $section,
@@ -197,15 +197,15 @@ function child_insert_featured_image( $content ) {
 
 		// This logic is same as parent header.php
 		$id = get_queried_object_id();
-		
+
 		if ( ( is_single() || ( is_page() && ! twentyseventeen_is_frontpage() ) ) && has_post_thumbnail( $id ) ) {
-			
+
 			$featured .= '<div style="margin-bottom:2.5em;">';
 			$featured .= get_the_post_thumbnail( $id, 'full' );
 			$featured .= '</div>';
 		}
 	}
-	
+
 	return $featured . $content;
 }
 //-----------------------------------------------------------------------------
@@ -230,15 +230,15 @@ function child_sanitize_comments($input) {
 add_action('customize_save_after', 'child_reset_theme');
 function child_reset_theme() {
 
-	// An easy way to do it withou requiring javascript
+	// An easy way to do it without requiring javascript
 	if (get_theme_mod(CHILD_MOD_THEME_CLEANUP, false)) {
 		remove_theme_mods();
 	}
-	
+
 }
 //-----------------------------------------------------------------------------
 function child_get_about_html() {
-	
+
 	$name = CHILD_THEME_NAME;
 	$version = CHILD_THEME_VERSION;
 	$parent = CHILD_THEME_PARENT;
@@ -272,7 +272,7 @@ HTML;
 function child_get_advanced_inline_css($mods) {
 
 	$css = '';
-	
+
 $css .= <<<CSS
 	.wrap,
 	body:not(.home) .content-area {
@@ -298,7 +298,7 @@ $css .= <<<CSS
 	}
 CSS;
 	}
-	
+
 	return $css;
 }
 //-----------------------------------------------------------------------------

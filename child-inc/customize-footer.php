@@ -40,7 +40,7 @@ function child_add_footer_controls($wp_customize, $def) {
 	$wp_customize->add_setting('frtx-info', array('sanitize_callback' => 'child_sanitize_label'));
 	$wp_customize->add_control(new Child_Customize_Info($wp_customize, 'frtx-info', array(
 		'section' => $section,
-		'label' => '<i><b>' . __('Notes.', 'teknomatic') . '</b> ' . __('The following variables may also be used to represent dynamic values:',
+		'label' => '<i><b>' . __('Notes.', 'kuiper-twentyseventeen') . '</b> ' . __('The following variables may also be used to represent dynamic values:',
 		'kuiper-twentyseventeen') . '</i><br/><br/>' .
 		child_get_variable_text('%VARNAMES%'),
 	)));
@@ -50,7 +50,7 @@ function child_add_footer_controls($wp_customize, $def) {
 		'default' => $def[$id],
 		'sanitize_callback' => 'child_sanitize_halign',
 	));
-	$wp_customize->add_control('tkctrl-' . $id, array(
+	$wp_customize->add_control('kpctrl-' . $id, array(
 		'type' => 'select',
 		'settings' => $id,
 		'section' => $section,
@@ -64,7 +64,7 @@ function child_add_footer_controls($wp_customize, $def) {
 		'default' => $def[$id],
 		'sanitize_callback' => 'child_sanitize_check',
 	));
-	$wp_customize->add_control('tkctrl-' . $id, array(
+	$wp_customize->add_control('kpctrl-' . $id, array(
 		'type' => 'checkbox',
 		'settings' => $id,
 		'section' => $section,

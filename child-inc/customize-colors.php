@@ -36,15 +36,15 @@ define('CHILD_MOD_COL_FTR_BORDER', 'col_ftr_border');
 $CHILD_MOD_COLORS_DEFAULTS = array (
 
 	CHILD_MOD_COL_HDR_BKGND => '#000000',
-	
+
 	CHILD_MOD_COL_MENU_OVERRIDE => false,
 	CHILD_MOD_COL_MENU_BKGD => '#000000',
 	CHILD_MOD_COL_MENU_TEXT => '#ffffff',
 	CHILD_MOD_COL_MENU_BORDER => true,
-	
+
 	CHILD_MOD_COL_MAIN_OVERRIDE => false,
 	CHILD_MOD_COL_MAIN_BKGND => '#eeeeee',
-	
+
 	CHILD_MOD_COL_HEADING_OVERRIDE => false,
 	CHILD_MOD_COL_H13 => '#777777',
 	CHILD_MOD_COL_H46 => '#999999',
@@ -79,7 +79,7 @@ function child_add_colors_controls($wp_customize, $def) {
 		'default' => $def[$id],
 		'sanitize_callback' => 'sanitize_hex_color',
 	));
-	$wp_customize->add_control(new WP_Customize_Color_Control($wp_customize, 'tkctrl-' . $id, array(
+	$wp_customize->add_control(new WP_Customize_Color_Control($wp_customize, 'kpctrl-' . $id, array(
 		'settings' => $id,
 		'section' => $section,
 		'label' => __('Header Background', 'kuiper-twentyseventeen'),
@@ -98,7 +98,7 @@ function child_add_colors_controls($wp_customize, $def) {
 		'default' => $def[$id],
 		'sanitize_callback' => 'child_sanitize_check',
 	));
-	$wp_customize->add_control('tkctrl-' . $id, array(
+	$wp_customize->add_control('kpctrl-' . $id, array(
 		'type' => 'checkbox',
 		'settings' => $id,
 		'section' => $section,
@@ -111,7 +111,7 @@ function child_add_colors_controls($wp_customize, $def) {
 		'default' => $def[$id],
 		'sanitize_callback' => 'sanitize_hex_color',
 	));
-	$wp_customize->add_control(new WP_Customize_Color_Control($wp_customize, 'tkctrl-' . $id, array(
+	$wp_customize->add_control(new WP_Customize_Color_Control($wp_customize, 'kpctrl-' . $id, array(
 		'settings' => $id,
 		'section' => $section,
 		'label' => __('Menu Background', 'kuiper-twentyseventeen'),
@@ -123,7 +123,7 @@ function child_add_colors_controls($wp_customize, $def) {
 		'default' => $def[$id],
 		'sanitize_callback' => 'sanitize_hex_color',
 	));
-	$wp_customize->add_control(new WP_Customize_Color_Control($wp_customize, 'tkctrl-' . $id, array(
+	$wp_customize->add_control(new WP_Customize_Color_Control($wp_customize, 'kpctrl-' . $id, array(
 		'settings' => $id,
 		'section' => $section,
 		'label' => __('Menu Text', 'kuiper-twentyseventeen'),
@@ -135,13 +135,13 @@ function child_add_colors_controls($wp_customize, $def) {
 		'default' => $def[$id],
 		'sanitize_callback' => 'child_sanitize_check',
 	));
-	$wp_customize->add_control('tkctrl-' . $id, array(
+	$wp_customize->add_control('kpctrl-' . $id, array(
 		'type' => 'checkbox',
 		'settings' => $id,
 		'section' => $section,
 		'label' => __('Border Line', 'kuiper-twentyseventeen'),
 		'description' => __('The default primary menu shows thin horizontal border lines. Its color is set by the theme.
-Uncheck to hide this. Useful if setting background color explicitly.', 'kuiper-twentyseventeen'),
+Check to set to background. Useful if setting background color explicitly.', 'kuiper-twentyseventeen'),
 	));
 
 	// CONTENT BACKGROUND
@@ -156,7 +156,7 @@ Uncheck to hide this. Useful if setting background color explicitly.', 'kuiper-t
 		'default' => $def[$id],
 		'sanitize_callback' => 'child_sanitize_check',
 	));
-	$wp_customize->add_control('tkctrl-' . $id, array(
+	$wp_customize->add_control('kpctrl-' . $id, array(
 		'type' => 'checkbox',
 		'settings' => $id,
 		'section' => $section,
@@ -170,7 +170,7 @@ Uncheck to hide this. Useful if setting background color explicitly.', 'kuiper-t
 		'default' => $def[$id],
 		'sanitize_callback' => 'sanitize_hex_color',
 	));
-	$wp_customize->add_control(new WP_Customize_Color_Control($wp_customize, 'tkctrl-' . $id, array(
+	$wp_customize->add_control(new WP_Customize_Color_Control($wp_customize, 'kpctrl-' . $id, array(
 		'settings' => $id,
 		'section' => $section,
 		'label' => __('Background Color', 'kuiper-twentyseventeen'),
@@ -190,7 +190,7 @@ Uncheck to hide this. Useful if setting background color explicitly.', 'kuiper-t
 		'default' => $def[$id],
 		'sanitize_callback' => 'child_sanitize_check',
 	));
-	$wp_customize->add_control('tkctrl-' . $id, array(
+	$wp_customize->add_control('kpctrl-' . $id, array(
 		'type' => 'checkbox',
 		'settings' => $id,
 		'section' => $section,
@@ -203,7 +203,7 @@ Uncheck to hide this. Useful if setting background color explicitly.', 'kuiper-t
 		'default' => $def[$id],
 		'sanitize_callback' => 'sanitize_hex_color',
 	));
-	$wp_customize->add_control(new WP_Customize_Color_Control($wp_customize, 'tkctrl-' . $id, array(
+	$wp_customize->add_control(new WP_Customize_Color_Control($wp_customize, 'kpctrl-' . $id, array(
 		'settings' => $id,
 		'section' => $section,
 		'label' => __('Page &amp; Post Title', 'kuiper-twentyseventeen'),
@@ -215,7 +215,7 @@ Uncheck to hide this. Useful if setting background color explicitly.', 'kuiper-t
 		'default' => $def[$id],
 		'sanitize_callback' => 'sanitize_hex_color',
 	));
-	$wp_customize->add_control(new WP_Customize_Color_Control($wp_customize, 'tkctrl-' . $id, array(
+	$wp_customize->add_control(new WP_Customize_Color_Control($wp_customize, 'kpctrl-' . $id, array(
 		'settings' => $id,
 		'section' => $section,
 		'label' => __('Headings 1-3', 'kuiper-twentyseventeen'),
@@ -227,7 +227,7 @@ Uncheck to hide this. Useful if setting background color explicitly.', 'kuiper-t
 		'default' => $def[$id],
 		'sanitize_callback' => 'sanitize_hex_color',
 	));
-	$wp_customize->add_control(new WP_Customize_Color_Control($wp_customize, 'tkctrl-' . $id, array(
+	$wp_customize->add_control(new WP_Customize_Color_Control($wp_customize, 'kpctrl-' . $id, array(
 		'settings' => $id,
 		'section' => $section,
 		'label' => __('Headings 4-6', 'kuiper-twentyseventeen'),
@@ -247,7 +247,7 @@ Uncheck to hide this. Useful if setting background color explicitly.', 'kuiper-t
 		'default' => $def[$id],
 		'sanitize_callback' => 'child_sanitize_check',
 	));
-	$wp_customize->add_control('tkctrl-' . $id, array(
+	$wp_customize->add_control('kpctrl-' . $id, array(
 		'type' => 'checkbox',
 		'settings' => $id,
 		'section' => $section,
@@ -260,7 +260,7 @@ Uncheck to hide this. Useful if setting background color explicitly.', 'kuiper-t
 		'default' => $def[$id],
 		'sanitize_callback' => 'sanitize_hex_color',
 	));
-	$wp_customize->add_control(new WP_Customize_Color_Control($wp_customize, 'tkctrl-' . $id, array(
+	$wp_customize->add_control(new WP_Customize_Color_Control($wp_customize, 'kpctrl-' . $id, array(
 		'settings' => $id,
 		'section' => $section,
 		'label' => __('Link Text', 'kuiper-twentyseventeen'),
@@ -272,7 +272,7 @@ Uncheck to hide this. Useful if setting background color explicitly.', 'kuiper-t
 		'default' => $def[$id],
 		'sanitize_callback' => 'sanitize_hex_color',
 	));
-	$wp_customize->add_control(new WP_Customize_Color_Control($wp_customize, 'tkctrl-' . $id, array(
+	$wp_customize->add_control(new WP_Customize_Color_Control($wp_customize, 'kpctrl-' . $id, array(
 		'settings' => $id,
 		'section' => $section,
 		'label' => __('Link Hover', 'kuiper-twentyseventeen'),
@@ -292,7 +292,7 @@ Uncheck to hide this. Useful if setting background color explicitly.', 'kuiper-t
 		'default' => $def[$id],
 		'sanitize_callback' => 'child_sanitize_check',
 	));
-	$wp_customize->add_control('tkctrl-' . $id, array(
+	$wp_customize->add_control('kpctrl-' . $id, array(
 		'type' => 'checkbox',
 		'settings' => $id,
 		'section' => $section,
@@ -305,7 +305,7 @@ Uncheck to hide this. Useful if setting background color explicitly.', 'kuiper-t
 		'default' => $def[$id],
 		'sanitize_callback' => 'sanitize_hex_color',
 	));
-	$wp_customize->add_control(new WP_Customize_Color_Control($wp_customize, 'tkctrl-' . $id, array(
+	$wp_customize->add_control(new WP_Customize_Color_Control($wp_customize, 'kpctrl-' . $id, array(
 		'settings' => $id,
 		'section' => $section,
 		'label' => __('Preformatted Background', 'kuiper-twentyseventeen'),
@@ -317,7 +317,7 @@ Uncheck to hide this. Useful if setting background color explicitly.', 'kuiper-t
 		'default' => $def[$id],
 		'sanitize_callback' => 'sanitize_hex_color',
 	));
-	$wp_customize->add_control(new WP_Customize_Color_Control($wp_customize, 'tkctrl-' . $id, array(
+	$wp_customize->add_control(new WP_Customize_Color_Control($wp_customize, 'kpctrl-' . $id, array(
 		'settings' => $id,
 		'section' => $section,
 		'label' => __('Preformatted Text', 'kuiper-twentyseventeen'),
@@ -329,7 +329,7 @@ Uncheck to hide this. Useful if setting background color explicitly.', 'kuiper-t
 		'default' => $def[$id],
 		'sanitize_callback' => 'sanitize_hex_color',
 	));
-	$wp_customize->add_control(new WP_Customize_Color_Control($wp_customize, 'tkctrl-' . $id, array(
+	$wp_customize->add_control(new WP_Customize_Color_Control($wp_customize, 'kpctrl-' . $id, array(
 		'settings' => $id,
 		'section' => $section,
 		'label' => __('Code Background', 'kuiper-twentyseventeen'),
@@ -341,7 +341,7 @@ Uncheck to hide this. Useful if setting background color explicitly.', 'kuiper-t
 		'default' => $def[$id],
 		'sanitize_callback' => 'sanitize_hex_color',
 	));
-	$wp_customize->add_control(new WP_Customize_Color_Control($wp_customize, 'tkctrl-' . $id, array(
+	$wp_customize->add_control(new WP_Customize_Color_Control($wp_customize, 'kpctrl-' . $id, array(
 		'settings' => $id,
 		'section' => $section,
 		'label' => __('Code Text', 'kuiper-twentyseventeen'),
@@ -360,7 +360,7 @@ Uncheck to hide this. Useful if setting background color explicitly.', 'kuiper-t
 		'default' => $def[$id],
 		'sanitize_callback' => 'child_sanitize_check',
 	));
-	$wp_customize->add_control('tkctrl-' . $id, array(
+	$wp_customize->add_control('kpctrl-' . $id, array(
 		'type' => 'checkbox',
 		'settings' => $id,
 		'section' => $section,
@@ -373,7 +373,7 @@ Uncheck to hide this. Useful if setting background color explicitly.', 'kuiper-t
 		'default' => $def[$id],
 		'sanitize_callback' => 'sanitize_hex_color',
 	));
-	$wp_customize->add_control(new WP_Customize_Color_Control($wp_customize, 'tkctrl-' . $id, array(
+	$wp_customize->add_control(new WP_Customize_Color_Control($wp_customize, 'kpctrl-' . $id, array(
 		'settings' => $id,
 		'section' => $section,
 		'label' => __('Footer Background', 'kuiper-twentyseventeen'),
@@ -385,7 +385,7 @@ Uncheck to hide this. Useful if setting background color explicitly.', 'kuiper-t
 		'default' => $def[$id],
 		'sanitize_callback' => 'sanitize_hex_color',
 	));
-	$wp_customize->add_control(new WP_Customize_Color_Control($wp_customize, 'tkctrl-' . $id, array(
+	$wp_customize->add_control(new WP_Customize_Color_Control($wp_customize, 'kpctrl-' . $id, array(
 		'settings' => $id,
 		'section' => $section,
 		'label' => __('Footer Text', 'kuiper-twentyseventeen'),
@@ -397,13 +397,13 @@ Uncheck to hide this. Useful if setting background color explicitly.', 'kuiper-t
 		'default' => $def[$id],
 		'sanitize_callback' => 'child_sanitize_check',
 	));
-	$wp_customize->add_control('tkctrl-' . $id, array(
+	$wp_customize->add_control('kpctrl-' . $id, array(
 		'type' => 'checkbox',
 		'settings' => $id,
 		'section' => $section,
 		'label' => __('Border Line', 'kuiper-twentyseventeen'),
 		'description' => __('The default footer shows a thin horizontal border line. Its color is set by the theme.
-Uncheck to hide this. Useful if setting background color explicitly.', 'kuiper-twentyseventeen'),
+Check to set to background. Useful if setting background color explicitly.', 'kuiper-twentyseventeen'),
 	));
 }
 //-----------------------------------------------------------------------------
@@ -436,35 +436,36 @@ $css .= <<<CSS
 	}
 CSS;
 	}
-	
+
 	if (!$mods[CHILD_MOD_COL_MENU_BORDER]) {
 $css .= <<<CSS
 		.navigation-top {
-			border: none;
+			border-top-color: {$mods[CHILD_MOD_COL_MENU_BKGD]} !important;
+			border-bottom-color: {$mods[CHILD_MOD_COL_MENU_BKGD]} !important;
 		}
 CSS;
 	}
 
 	if ($mods[CHILD_MOD_COL_MAIN_OVERRIDE]) {
 $css .= <<<CSS
-	.site-content-contain {
-		background-color: {$mods[CHILD_MOD_COL_MAIN_BKGND]} !important;
-	}
+		.site-content-contain {
+			background-color: {$mods[CHILD_MOD_COL_MAIN_BKGND]} !important;
+		}
 CSS;
 	}
 
 	if ($mods[CHILD_MOD_COL_HEADING_OVERRIDE]) {
 $css .= <<<CSS
-	.entry-header .entry-title {
-		color: {$mods[CHILD_MOD_COL_ENTRY_TITLE]} !important;
-	}
+		.entry-header .entry-title {
+			color: {$mods[CHILD_MOD_COL_ENTRY_TITLE]} !important;
+		}
 
 	.entry-content h1,
 	.entry-content h2,
 	.entry-content h3 {
 		color: {$mods[CHILD_MOD_COL_H13]};
 	}
-	
+
 	.entry-content h4,
 	.entry-content h5,
 	.entry-content h6 {
@@ -472,13 +473,15 @@ $css .= <<<CSS
 	}
 CSS;
 	}
-	
+
 	if ($mods[CHILD_MOD_COL_LINK_OVERRIDE]) {
 $css .= <<<CSS
+	.entry-content ul a,
+	.entry-content ol a,
 	.entry-content p a:not(.author-link) {
 		color: {$mods[CHILD_MOD_COL_LINK_TEXT]};
 	}
-	
+
 	.site-content-contain a:focus,
 	.site-content-contain a:hover,
 	.site-content-contain a:focus .nav-title,
@@ -495,7 +498,7 @@ $css .= <<<CSS
 		color: {$mods[CHILD_MOD_COL_PRE_TEXT]} !important;
 		background-color: {$mods[CHILD_MOD_COL_PRE_BKGD]} !important;
 	}
-	
+
 	.wp-block-code {
 		color: {$mods[CHILD_MOD_COL_CODE_TEXT]} !important;
 		background-color: {$mods[CHILD_MOD_COL_CODE_BKGD]} !important;
@@ -518,7 +521,7 @@ CSS;
 	if (!$mods[CHILD_MOD_COL_FTR_BORDER]) {
 $css .= <<<CSS
 		.site-footer {
-			border: none;
+			border-top-color: {$mods[CHILD_MOD_COL_FTR_BKGD]} !important;
 		}
 CSS;
 	}

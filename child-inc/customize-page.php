@@ -15,7 +15,7 @@ define('CHILD_MOD_PAGE_NAV', 'page_nav');
 define('CHILD_MOD_PAGE_EXCERPT_ONLY', 'page_excerpt_only');
 
 $CHILD_MOD_PAGE_DEFAULTS = array (
-		
+
 	CHILD_MOD_PAGE_HOME_TITLE => true,
 	CHILD_MOD_PAGE_ENTRY_META => true,
 	CHILD_MOD_PAGE_RULES => true,
@@ -44,7 +44,7 @@ function child_add_page_controls($wp_customize, $def) {
 		'default' => $def[$id],
 		'sanitize_callback' => 'child_sanitize_check',
 	));
-	$wp_customize->add_control('tkctrl-' . $id, array(
+	$wp_customize->add_control('kpctrl-' . $id, array(
 		'type' => 'checkbox',
 		'settings' => $id,
 		'section' => $section,
@@ -57,7 +57,7 @@ function child_add_page_controls($wp_customize, $def) {
 		'default' => $def[$id],
 		'sanitize_callback' => 'child_sanitize_check',
 	));
-	$wp_customize->add_control('tkctrl-' . $id, array(
+	$wp_customize->add_control('kpctrl-' . $id, array(
 		'type' => 'checkbox',
 		'settings' => $id,
 		'section' => $section,
@@ -70,7 +70,7 @@ function child_add_page_controls($wp_customize, $def) {
 		'default' => $def[$id],
 		'sanitize_callback' => 'child_sanitize_check',
 	));
-	$wp_customize->add_control('tkctrl-' . $id, array(
+	$wp_customize->add_control('kpctrl-' . $id, array(
 		'type' => 'checkbox',
 		'settings' => $id,
 		'section' => $section,
@@ -83,7 +83,7 @@ function child_add_page_controls($wp_customize, $def) {
 		'default' => $def[$id],
 		'sanitize_callback' => 'child_sanitize_link_underlines',
 	));
-	$wp_customize->add_control('tkctrl-' . $id, array(
+	$wp_customize->add_control('kpctrl-' . $id, array(
 		'type' => 'select',
 		'settings' => $id,
 		'section' => $section,
@@ -97,20 +97,20 @@ function child_add_page_controls($wp_customize, $def) {
 		'default' => $def[$id],
 		'sanitize_callback' => 'child_sanitize_check',
 	));
-	$wp_customize->add_control('tkctrl-' . $id, array(
+	$wp_customize->add_control('kpctrl-' . $id, array(
 		'type' => 'checkbox',
 		'settings' => $id,
 		'section' => $section,
 		'label' => __('Show Post Author', 'kuiper-twentyseventeen'),
 		'description' => __('Show the author bio in posts.', 'kuiper-twentyseventeen'),
 	));
-	
+
 	$id = CHILD_MOD_PAGE_AUTHOR_IMAGE;
 	$wp_customize->add_setting($id, array(
 		'default' => $def[$id],
 		'sanitize_callback' => 'child_sanitize_check',
 	));
-	$wp_customize->add_control('tkctrl-' . $id, array(
+	$wp_customize->add_control('kpctrl-' . $id, array(
 		'type' => 'checkbox',
 		'settings' => $id,
 		'section' => $section,
@@ -123,7 +123,7 @@ function child_add_page_controls($wp_customize, $def) {
 		'default' => $def[$id],
 		'sanitize_callback' => 'child_sanitize_check',
 	));
-	$wp_customize->add_control('tkctrl-' . $id, array(
+	$wp_customize->add_control('kpctrl-' . $id, array(
 		'type' => 'checkbox',
 		'settings' => $id,
 		'section' => $section,
@@ -136,7 +136,7 @@ function child_add_page_controls($wp_customize, $def) {
 		'default' => $def[$id],
 		'sanitize_callback' => 'child_sanitize_check',
 	));
-	$wp_customize->add_control('tkctrl-' . $id, array(
+	$wp_customize->add_control('kpctrl-' . $id, array(
 		'type' => 'checkbox',
 		'settings' => $id,
 		'section' => $section,
@@ -149,27 +149,27 @@ function child_add_page_controls($wp_customize, $def) {
 		'default' => $def[$id],
 		'sanitize_callback' => 'child_sanitize_check',
 	));
-	$wp_customize->add_control('tkctrl-' . $id, array(
+	$wp_customize->add_control('kpctrl-' . $id, array(
 		'type' => 'checkbox',
 		'settings' => $id,
 		'section' => $section,
 		'label' => __('Post Navigation', 'kuiper-twentyseventeen'),
 		'description' => __('Show Next/Previous navigation at bottom of posts.', 'kuiper-twentyseventeen'),
 	));
-	
+
 	$id = CHILD_MOD_PAGE_EXCERPT_ONLY;
 	$wp_customize->add_setting($id, array(
 		'default' => $def[$id],
 		'sanitize_callback' => 'child_sanitize_check',
 	));
-	$wp_customize->add_control('tkctrl-' . $id, array(
+	$wp_customize->add_control('kpctrl-' . $id, array(
 		'type' => 'checkbox',
 		'settings' => $id,
 		'section' => $section,
 		'label' => __('Excerpts Only', 'kuiper-twentyseventeen'),
 		'description' => __('Show excerpts only in archive and blog pages.', 'kuiper-twentyseventeen'),
 	));
-	
+
 }
 //-----------------------------------------------------------------------------
 function child_get_select_link_underlines() {
@@ -192,40 +192,40 @@ function child_sanitize_link_underlines($input) {
 //-----------------------------------------------------------------------------
 add_action( 'the_content', 'child_insert_author_info' );
 function child_insert_author_info( $content ) {
-  
+
 	global $post;
 	global $CHILD_GMODS;
-	
+
 	// Detect if it is a single post with a post author
 	if ( $CHILD_GMODS[CHILD_MOD_PAGE_AUTHOR_BIO] && is_single() && isset( $post->post_author ) ) {
-		
-		// Get author's display name 
+
+		// Get author's display name
 		$display_name = get_the_author_meta( 'display_name', $post->post_author );
-			
+
 		// If display name is not available then use nickname as display name
 		if ( empty( $display_name ) ) {
 			$display_name = get_the_author_meta( 'nickname', $post->post_author );
 		}
-			
+
 		// Get author's biographical information or description
 		$user_description = get_the_author_meta( 'user_description', $post->post_author );
-			
+
 		// Get link to the author archive page
 		$user_posts = get_author_posts_url( get_the_author_meta( 'ID' , $post->post_author));
-		 
+
 		if ( ! empty( $display_name ) ) {
 			$author_details =  '<p class="author-name">' . __('By', 'kuiper-twentyseventeen') . ' ' . $display_name . '</p>';
 		}
-		
+
 		if ( ! empty( $user_description ) ) {
 			// Author avatar and bio
-			$author_details .= '<p class="author-details">'; 
+			$author_details .= '<p class="author-details">';
 
 			if ($CHILD_GMODS[CHILD_MOD_PAGE_AUTHOR_IMAGE]) {
 				// Image
 				$author_details .= get_avatar( get_the_author_meta('user_email') , 90 );
 			}
-			
+
 			$author_details .= nl2br( $user_description );
 
 			if ($CHILD_GMODS[CHILD_MOD_PAGE_AUTHOR_WEBSITE]) {
@@ -236,18 +236,18 @@ function child_insert_author_info( $content ) {
 					$author_details .= '<br/>Website: <a class="author-website" href="' . $user_website .'" target="_blank" rel="nofollow">' . $user_website . '</a>';
 				}
 			}
-			
+
 			$author_details .= '</p>';
 		}
-		
-		$author_details .= '<p>' . __('View all posts by', 'kuiper-twentyseventeen');  
+
+		$author_details .= '<p>' . __('View all posts by', 'kuiper-twentyseventeen');
 		$author_details .= ' <a class="author-link" href="'. $user_posts .'">' . $display_name . '</a>';
 		$author_details .= '</p>';
-		
-		// Pass all this info to post content  
+
+		// Pass all this info to post content
 		$content = $content . '<footer class="author-bio" >' . $author_details . '</footer>';
 	}
-		
+
 	return $content;
 }
 //-----------------------------------------------------------------------------
@@ -282,7 +282,7 @@ $css .= <<<CSS
 	#comments {
 		border: none;
 	}
-	
+
 	.wp-block-table.is-style-stripes {
 		border-bottom: none;
 	}
@@ -290,7 +290,7 @@ CSS;
 	}
 
 	$show_links = $mods[CHILD_MOD_PAGE_LINK_UNDERLINE];
-	
+
 	if ($show_links == 'none' || $show_links == 'content') {
 $css .= <<<CSS
 	a,
@@ -305,7 +305,9 @@ CSS;
 		if ($show_links == 'content') {
 			// Can we just exclude entry-content from above instead?
 $css .= <<<CSS
-		.entry-content p a {
+		.entry-content > p a,
+		.entry-content > ul a,
+		.entry-content > ol a {
 			text-decoration: underline;
 		}
 CSS;

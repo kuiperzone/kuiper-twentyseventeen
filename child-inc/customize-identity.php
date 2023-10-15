@@ -28,7 +28,7 @@ function child_add_identity_controls($wp_customize, $def) {
 		'default' => $def[$id],
 		'sanitize_callback' => 'child_sanitize_check',
 	));
-	$wp_customize->add_control('tkctrl-' . $id, array(
+	$wp_customize->add_control('kpctrl-' . $id, array(
 		'priority' => $priority++,
 		'type' => 'checkbox',
 		'settings' => $id,
@@ -72,7 +72,7 @@ Leave empty for default.', 'kuiper-twentyseventeen'),
 	$wp_customize->add_control(new Child_Customize_Info($wp_customize, 'idtx-info', array(
 		'priority' => $priority++,
 		'section' => $section,
-		'label' => '<i><b>' . __('Notes.', 'teknomatic') . '</b> ' . __('The following variables may be used above to represent dynamic values:',
+		'label' => '<i><b>' . __('Notes.', 'kuiper-twentyseventeen') . '</b> ' . __('The following variables may be used above to represent dynamic values:',
 		'kuiper-twentyseventeen') . '</i><br/><br/>' .
 		child_get_variable_text('%VARNAMES%'),
 	)));
@@ -113,7 +113,7 @@ $css .= <<<CSS
 	}
 CSS;
 	}
-	
+
 	return $css;
 }
 //-----------------------------------------------------------------------------

@@ -3,15 +3,15 @@ KUIPER
 Twenty Seventeen
 ===================
 
-Requires at least : WordPress 4.4
-Tested            : WordPress 5.6
+Requires at least : WordPress 4.7
+Tested            : WordPress 6.3.2
 License           : GPLv3 or later
 License URI       : http://www.gnu.org/licenses/gpl-3.0.html
 
 
 == DESCRIPTION ==
 
-KUIPER Twenty Seventeen is a highly customisable theme for WordPress. It is a child theme of the
+KUIPER Twenty Seventeen is a highly customizable theme for WordPress. It is a child theme of the
 enormously popular Twenty Seventeen but, unlike the parent, it allows you to extend the page width,
 customize fonts and colors, and change how the "Featured Image" is displayed.
 
@@ -30,9 +30,9 @@ o Set fonts names and sizes for individual element types.
 o Add a configurable "author bio" section for posts.
 o Specify web-font URLs from the customizer.
 
-If you like KUIPER Twenty Seventeen, please do share it around. It is licensed under GPL,
-so you are free to modify it as you wish. If you derive and republish it, please do respect
-my original copyright and include my personal web address along with the copyright statement.
+It is licensed under GPL, so you are free to modify it as you wish. If you derive and republish it,
+please do respect my original copyright and include my personal web address along with the copyright
+statement.
 
 For more information:
 
@@ -44,7 +44,7 @@ Andy Thomas
 == COPYRIGHT ==
 
 KUIPER Twenty Seventeen
-Copyright 2020 Andy Thomas.
+Copyright 2020-23 Andy Thomas.
 
 Twenty Seventeen WordPress Theme
 Copyright WordPress.org

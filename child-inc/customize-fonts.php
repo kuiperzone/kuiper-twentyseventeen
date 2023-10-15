@@ -77,11 +77,11 @@ define('CHILD_MOD_FONT_FOOTER_NAME', 'font_footer_name');
 define('CHILD_MOD_FONT_FOOTER_SIZE', 'font_footer_size');
 
 $CHILD_MOD_FONTS_DEFAULTS = array (
-	CHILD_MOD_FONT_BODY_NAME => '"Segoe UI", Roboto, Verdana, "Dejavu Sans", sans-serif',
+	CHILD_MOD_FONT_BODY_NAME => 'sans-serif',
 	CHILD_MOD_FONT_BODY_SIZE => '16px',
 	CHILD_MOD_FONT_LETTER_SPACING => 'normal',
 	CHILD_MOD_FONT_LINE_HEIGHT => 'normal',
-	
+
 	CHILD_MOD_FONT_HEADER_NAME => '',
 	CHILD_MOD_FONT_HEADER_SIZE => '2.45rem',
 	CHILD_MOD_FONT_HEADER_BOLD => false,
@@ -95,7 +95,7 @@ $CHILD_MOD_FONTS_DEFAULTS = array (
 	CHILD_MOD_FONT_MENU_SIZE => '0.875rem',
 	CHILD_MOD_FONT_MENU_BOLD => true,
 	CHILD_MOD_FONT_MENU_TRAN => 'none',
-	
+
 	CHILD_MOD_FONT_ENTRY_NAME => '',
 
 	CHILD_MOD_FONT_PAGE_SIZE => '1.6rem',
@@ -108,7 +108,7 @@ $CHILD_MOD_FONTS_DEFAULTS = array (
 	CHILD_MOD_FONT_POST_BOLD => false,
 	CHILD_MOD_FONT_POST_ITAL => false,
 	CHILD_MOD_FONT_POST_TRAN => 'none',
-	
+
 	CHILD_MOD_FONT_META_SIZE => '0.8rem',
 	CHILD_MOD_FONT_META_BOLD => true,
 	CHILD_MOD_FONT_META_ITAL => false,
@@ -135,12 +135,12 @@ $CHILD_MOD_FONTS_DEFAULTS = array (
 	CHILD_MOD_FONT_H6_BOLD => false,
 	CHILD_MOD_FONT_H6_ITAL => true,
 
-	CHILD_MOD_FONT_PRE_NAME => '"Courier New", Courier, monospace',
+	CHILD_MOD_FONT_PRE_NAME => 'monospace',
 	CHILD_MOD_FONT_PRE_SIZE => '1.0rem',
-	CHILD_MOD_FONT_CODE_NAME => 'Consolas, "Courier New", Courier, monospace',
+	CHILD_MOD_FONT_CODE_NAME => 'monospace',
 	CHILD_MOD_FONT_CODE_SIZE => '1.0rem',
-	CHILD_MOD_FONT_BKQT_NAME => 'Georgia, "Times New Roman", serif',
-	
+	CHILD_MOD_FONT_BKQT_NAME => 'serif',
+
 	CHILD_MOD_FONT_WIDGET_TITLE_SIZE => '1.0rem',
 	CHILD_MOD_FONT_WIDGET_TITLE_BOLD => true,
 	CHILD_MOD_FONT_WIDGET_TITLE_ITALIC => false,
@@ -175,7 +175,7 @@ function child_add_fonts_controls($wp_customize, $def) {
 		'default' => $def[$id],
 		'sanitize_callback' => 'child_sanitize_text',
 	));
-	$wp_customize->add_control('tkctrl-' . $id, array(
+	$wp_customize->add_control('kpctrl-' . $id, array(
 		'type' => 'text',
 		'settings' => $id,
 		'section' => $section,
@@ -188,13 +188,13 @@ function child_add_fonts_controls($wp_customize, $def) {
 		'default' => $def[$id],
 		'sanitize_callback' => 'child_sanitize_css_size',
 	));
-	$wp_customize->add_control('tkctrl-' . $id, array(
+	$wp_customize->add_control('kpctrl-' . $id, array(
 		'type' => 'text',
 		'settings' => $id,
 		'section' => $section,
 		'label' => __('Default Size', 'kuiper-twentyseventeen'),
 		'description' => __('Font size for default body text in CSS units: px, rem, %, pt or em.
-This can be used to scale all fonts provided other sizes (below) are specified in relative "rem" or "%" units.		
+This can be used to scale all fonts provided other sizes (below) are specified in relative "rem" or "%" units.
 Default: ', 'kuiper-twentyseventeen') . $def[$id],
 	));
 
@@ -203,7 +203,7 @@ Default: ', 'kuiper-twentyseventeen') . $def[$id],
 		'default' => $def[$id],
 		'sanitize_callback' => 'child_sanitize_length',
 	));
-	$wp_customize->add_control('tkctrl-' . $id, array(
+	$wp_customize->add_control('kpctrl-' . $id, array(
 		'type' => 'text',
 		'settings' => $id,
 		'section' => $section,
@@ -217,7 +217,7 @@ Example: "0.1em". Default: ', 'kuiper-twentyseventeen') . $def[$id],
 		'default' => $def[$id],
 		'sanitize_callback' => 'child_sanitize_length',
 	));
-	$wp_customize->add_control('tkctrl-' . $id, array(
+	$wp_customize->add_control('kpctrl-' . $id, array(
 		'type' => 'text',
 		'settings' => $id,
 		'section' => $section,
@@ -238,7 +238,7 @@ Applies to page content text only. Default: ', 'kuiper-twentyseventeen') . $def[
 		'default' => $def[$id],
 		'sanitize_callback' => 'child_sanitize_text',
 	));
-	$wp_customize->add_control('tkctrl-' . $id, array(
+	$wp_customize->add_control('kpctrl-' . $id, array(
 		'settings' => $id,
 		'section' => $section,
 		'type' => 'text',
@@ -251,7 +251,7 @@ Applies to page content text only. Default: ', 'kuiper-twentyseventeen') . $def[
 		'default' => $def[$id],
 		'sanitize_callback' => 'child_sanitize_css_size',
 	));
-	$wp_customize->add_control('tkctrl-' . $id, array(
+	$wp_customize->add_control('kpctrl-' . $id, array(
 		'type' => 'text',
 		'settings' => $id,
 		'section' => $section,
@@ -265,7 +265,7 @@ Default: ', 'kuiper-twentyseventeen') . $def[$id],
 		'default' => $def[$id],
 		'sanitize_callback' => 'child_sanitize_check',
 	));
-	$wp_customize->add_control('tkctrl-' . $id, array(
+	$wp_customize->add_control('kpctrl-' . $id, array(
 		'type' => 'checkbox',
 		'settings' => $id,
 		'section' => $section,
@@ -277,7 +277,7 @@ Default: ', 'kuiper-twentyseventeen') . $def[$id],
 		'default' => $def[$id],
 		'sanitize_callback' => 'child_sanitize_check',
 	));
-	$wp_customize->add_control('tkctrl-' . $id, array(
+	$wp_customize->add_control('kpctrl-' . $id, array(
 		'type' => 'checkbox',
 		'settings' => $id,
 		'section' => $section,
@@ -289,7 +289,7 @@ Default: ', 'kuiper-twentyseventeen') . $def[$id],
 		'default' => $def[$id],
 		'sanitize_callback' => 'child_sanitize_check',
 	));
-	$wp_customize->add_control('tkctrl-' . $id, array(
+	$wp_customize->add_control('kpctrl-' . $id, array(
 		'type' => 'checkbox',
 		'settings' => $id,
 		'section' => $section,
@@ -301,7 +301,7 @@ Default: ', 'kuiper-twentyseventeen') . $def[$id],
 		'default' => $def[$id],
 		'sanitize_callback' => 'child_sanitize_css_size',
 	));
-	$wp_customize->add_control('tkctrl-' . $id, array(
+	$wp_customize->add_control('kpctrl-' . $id, array(
 		'type' => 'text',
 		'settings' => $id,
 		'section' => $section,
@@ -315,7 +315,7 @@ Default: ', 'kuiper-twentyseventeen') . $def[$id],
 		'default' => $def[$id],
 		'sanitize_callback' => 'child_sanitize_check',
 	));
-	$wp_customize->add_control('tkctrl-' . $id, array(
+	$wp_customize->add_control('kpctrl-' . $id, array(
 		'type' => 'checkbox',
 		'settings' => $id,
 		'section' => $section,
@@ -327,7 +327,7 @@ Default: ', 'kuiper-twentyseventeen') . $def[$id],
 		'default' => $def[$id],
 		'sanitize_callback' => 'child_sanitize_check',
 	));
-	$wp_customize->add_control('tkctrl-' . $id, array(
+	$wp_customize->add_control('kpctrl-' . $id, array(
 		'type' => 'checkbox',
 		'settings' => $id,
 		'section' => $section,
@@ -346,7 +346,7 @@ Default: ', 'kuiper-twentyseventeen') . $def[$id],
 		'default' => $def[$id],
 		'sanitize_callback' => 'child_sanitize_text',
 	));
-	$wp_customize->add_control('tkctrl-' . $id, array(
+	$wp_customize->add_control('kpctrl-' . $id, array(
 		'settings' => $id,
 		'section' => $section,
 		'type' => 'text',
@@ -359,7 +359,7 @@ Default: ', 'kuiper-twentyseventeen') . $def[$id],
 		'default' => $def[$id],
 		'sanitize_callback' => 'child_sanitize_css_size',
 	));
-	$wp_customize->add_control('tkctrl-' . $id, array(
+	$wp_customize->add_control('kpctrl-' . $id, array(
 		'type' => 'text',
 		'settings' => $id,
 		'section' => $section,
@@ -373,7 +373,7 @@ Default: ', 'kuiper-twentyseventeen') . $def[$id],
 		'default' => $def[$id],
 		'sanitize_callback' => 'child_sanitize_check',
 	));
-	$wp_customize->add_control('tkctrl-' . $id, array(
+	$wp_customize->add_control('kpctrl-' . $id, array(
 		'type' => 'checkbox',
 		'settings' => $id,
 		'section' => $section,
@@ -385,7 +385,7 @@ Default: ', 'kuiper-twentyseventeen') . $def[$id],
 		'default' => $def[$id],
 		'sanitize_callback' => 'child_sanitize_transform',
 	));
-	$wp_customize->add_control('tkctrl-' . $id, array(
+	$wp_customize->add_control('kpctrl-' . $id, array(
 		'type' => 'select',
 		'settings' => $id,
 		'section' => $section,
@@ -407,13 +407,13 @@ Default: ', 'kuiper-twentyseventeen') . $def[$id],
 		'default' => $def[$id],
 		'sanitize_callback' => 'child_sanitize_text',
 	));
-	$wp_customize->add_control('tkctrl-' . $id, array(
+	$wp_customize->add_control('kpctrl-' . $id, array(
 		'settings' => $id,
 		'section' => $section,
 		'type' => 'text',
 		'label' => __('Title Font', 'kuiper-twentyseventeen'),
-		'description' => __('Font-family for post and page titles.
-Leave blank to use default body font.', 'kuiper-twentyseventeen'),
+		'description' => __('Font-family for both post and page titles.
+Leave blank to use heading font.', 'kuiper-twentyseventeen'),
 	));
 
 	$id = CHILD_MOD_FONT_PAGE_SIZE;
@@ -421,7 +421,7 @@ Leave blank to use default body font.', 'kuiper-twentyseventeen'),
 		'default' => $def[$id],
 		'sanitize_callback' => 'child_sanitize_css_size',
 	));
-	$wp_customize->add_control('tkctrl-' . $id, array(
+	$wp_customize->add_control('kpctrl-' . $id, array(
 		'type' => 'text',
 		'settings' => $id,
 		'section' => $section,
@@ -435,7 +435,7 @@ Default: ', 'kuiper-twentyseventeen') . $def[$id],
 		'default' => $def[$id],
 		'sanitize_callback' => 'child_sanitize_check',
 	));
-	$wp_customize->add_control('tkctrl-' . $id, array(
+	$wp_customize->add_control('kpctrl-' . $id, array(
 		'type' => 'checkbox',
 		'settings' => $id,
 		'section' => $section,
@@ -447,7 +447,7 @@ Default: ', 'kuiper-twentyseventeen') . $def[$id],
 		'default' => $def[$id],
 		'sanitize_callback' => 'child_sanitize_check',
 	));
-	$wp_customize->add_control('tkctrl-' . $id, array(
+	$wp_customize->add_control('kpctrl-' . $id, array(
 		'type' => 'checkbox',
 		'settings' => $id,
 		'section' => $section,
@@ -459,7 +459,7 @@ Default: ', 'kuiper-twentyseventeen') . $def[$id],
 		'default' => $def[$id],
 		'sanitize_callback' => 'child_sanitize_check',
 	));
-	$wp_customize->add_control('tkctrl-' . $id, array(
+	$wp_customize->add_control('kpctrl-' . $id, array(
 		'type' => 'checkbox',
 		'settings' => $id,
 		'section' => $section,
@@ -471,7 +471,7 @@ Default: ', 'kuiper-twentyseventeen') . $def[$id],
 		'default' => $def[$id],
 		'sanitize_callback' => 'child_sanitize_transform',
 	));
-	$wp_customize->add_control('tkctrl-' . $id, array(
+	$wp_customize->add_control('kpctrl-' . $id, array(
 		'type' => 'select',
 		'settings' => $id,
 		'section' => $section,
@@ -493,7 +493,7 @@ Default: ', 'kuiper-twentyseventeen') . $def[$id],
 		'default' => $def[$id],
 		'sanitize_callback' => 'child_sanitize_css_size',
 	));
-	$wp_customize->add_control('tkctrl-' . $id, array(
+	$wp_customize->add_control('kpctrl-' . $id, array(
 		'type' => 'text',
 		'settings' => $id,
 		'section' => $section,
@@ -507,7 +507,7 @@ Default: ', 'kuiper-twentyseventeen') . $def[$id],
 		'default' => $def[$id],
 		'sanitize_callback' => 'child_sanitize_check',
 	));
-	$wp_customize->add_control('tkctrl-' . $id, array(
+	$wp_customize->add_control('kpctrl-' . $id, array(
 		'type' => 'checkbox',
 		'settings' => $id,
 		'section' => $section,
@@ -519,7 +519,7 @@ Default: ', 'kuiper-twentyseventeen') . $def[$id],
 		'default' => $def[$id],
 		'sanitize_callback' => 'child_sanitize_check',
 	));
-	$wp_customize->add_control('tkctrl-' . $id, array(
+	$wp_customize->add_control('kpctrl-' . $id, array(
 		'type' => 'checkbox',
 		'settings' => $id,
 		'section' => $section,
@@ -531,7 +531,7 @@ Default: ', 'kuiper-twentyseventeen') . $def[$id],
 		'default' => $def[$id],
 		'sanitize_callback' => 'child_sanitize_transform',
 	));
-	$wp_customize->add_control('tkctrl-' . $id, array(
+	$wp_customize->add_control('kpctrl-' . $id, array(
 		'type' => 'select',
 		'settings' => $id,
 		'section' => $section,
@@ -545,7 +545,7 @@ Default: ', 'kuiper-twentyseventeen') . $def[$id],
 		'default' => $def[$id],
 		'sanitize_callback' => 'child_sanitize_css_size',
 	));
-	$wp_customize->add_control('tkctrl-' . $id, array(
+	$wp_customize->add_control('kpctrl-' . $id, array(
 		'type' => 'text',
 		'settings' => $id,
 		'section' => $section,
@@ -559,7 +559,7 @@ Default: ', 'kuiper-twentyseventeen') . $def[$id],
 		'default' => $def[$id],
 		'sanitize_callback' => 'child_sanitize_check',
 	));
-	$wp_customize->add_control('tkctrl-' . $id, array(
+	$wp_customize->add_control('kpctrl-' . $id, array(
 		'type' => 'checkbox',
 		'settings' => $id,
 		'section' => $section,
@@ -571,7 +571,7 @@ Default: ', 'kuiper-twentyseventeen') . $def[$id],
 		'default' => $def[$id],
 		'sanitize_callback' => 'child_sanitize_check',
 	));
-	$wp_customize->add_control('tkctrl-' . $id, array(
+	$wp_customize->add_control('kpctrl-' . $id, array(
 		'type' => 'checkbox',
 		'settings' => $id,
 		'section' => $section,
@@ -583,7 +583,7 @@ Default: ', 'kuiper-twentyseventeen') . $def[$id],
 		'default' => $def[$id],
 		'sanitize_callback' => 'child_sanitize_transform',
 	));
-	$wp_customize->add_control('tkctrl-' . $id, array(
+	$wp_customize->add_control('kpctrl-' . $id, array(
 		'type' => 'select',
 		'settings' => $id,
 		'section' => $section,
@@ -604,7 +604,7 @@ Default: ', 'kuiper-twentyseventeen') . $def[$id],
 		'default' => $def[$id],
 		'sanitize_callback' => 'child_sanitize_text',
 	));
-	$wp_customize->add_control('tkctrl-' . $id, array(
+	$wp_customize->add_control('kpctrl-' . $id, array(
 		'settings' => $id,
 		'section' => $section,
 		'type' => 'text',
@@ -618,7 +618,7 @@ Leave blank to use default body font.', 'kuiper-twentyseventeen'),
 		'default' => $def[$id],
 		'sanitize_callback' => 'child_sanitize_check',
 	));
-	$wp_customize->add_control('tkctrl-' . $id, array(
+	$wp_customize->add_control('kpctrl-' . $id, array(
 		'type' => 'checkbox',
 		'settings' => $id,
 		'section' => $section,
@@ -632,7 +632,7 @@ following paragraph text.', 'kuiper-twentyseventeen'),
 		'default' => $def[$id],
 		'sanitize_callback' => 'child_sanitize_css_size',
 	));
-	$wp_customize->add_control('tkctrl-' . $id, array(
+	$wp_customize->add_control('kpctrl-' . $id, array(
 		'type' => 'text',
 		'settings' => $id,
 		'section' => $section,
@@ -646,7 +646,7 @@ Default: ', 'kuiper-twentyseventeen') . $def[$id],
 		'default' => $def[$id],
 		'sanitize_callback' => 'child_sanitize_check',
 	));
-	$wp_customize->add_control('tkctrl-' . $id, array(
+	$wp_customize->add_control('kpctrl-' . $id, array(
 		'type' => 'checkbox',
 		'settings' => $id,
 		'section' => $section,
@@ -658,7 +658,7 @@ Default: ', 'kuiper-twentyseventeen') . $def[$id],
 		'default' => $def[$id],
 		'sanitize_callback' => 'child_sanitize_check',
 	));
-	$wp_customize->add_control('tkctrl-' . $id, array(
+	$wp_customize->add_control('kpctrl-' . $id, array(
 		'type' => 'checkbox',
 		'settings' => $id,
 		'section' => $section,
@@ -671,7 +671,7 @@ Default: ', 'kuiper-twentyseventeen') . $def[$id],
 		'default' => $def[$id],
 		'sanitize_callback' => 'child_sanitize_css_size',
 	));
-	$wp_customize->add_control('tkctrl-' . $id, array(
+	$wp_customize->add_control('kpctrl-' . $id, array(
 		'type' => 'text',
 		'settings' => $id,
 		'section' => $section,
@@ -685,7 +685,7 @@ Default: ', 'kuiper-twentyseventeen') . $def[$id],
 		'default' => $def[$id],
 		'sanitize_callback' => 'child_sanitize_check',
 	));
-	$wp_customize->add_control('tkctrl-' . $id, array(
+	$wp_customize->add_control('kpctrl-' . $id, array(
 		'type' => 'checkbox',
 		'settings' => $id,
 		'section' => $section,
@@ -697,7 +697,7 @@ Default: ', 'kuiper-twentyseventeen') . $def[$id],
 		'default' => $def[$id],
 		'sanitize_callback' => 'child_sanitize_check',
 	));
-	$wp_customize->add_control('tkctrl-' . $id, array(
+	$wp_customize->add_control('kpctrl-' . $id, array(
 		'type' => 'checkbox',
 		'settings' => $id,
 		'section' => $section,
@@ -710,7 +710,7 @@ Default: ', 'kuiper-twentyseventeen') . $def[$id],
 		'default' => $def[$id],
 		'sanitize_callback' => 'child_sanitize_css_size',
 	));
-	$wp_customize->add_control('tkctrl-' . $id, array(
+	$wp_customize->add_control('kpctrl-' . $id, array(
 		'type' => 'text',
 		'settings' => $id,
 		'section' => $section,
@@ -724,7 +724,7 @@ Default: ', 'kuiper-twentyseventeen') . $def[$id],
 		'default' => $def[$id],
 		'sanitize_callback' => 'child_sanitize_check',
 	));
-	$wp_customize->add_control('tkctrl-' . $id, array(
+	$wp_customize->add_control('kpctrl-' . $id, array(
 		'type' => 'checkbox',
 		'settings' => $id,
 		'section' => $section,
@@ -736,7 +736,7 @@ Default: ', 'kuiper-twentyseventeen') . $def[$id],
 		'default' => $def[$id],
 		'sanitize_callback' => 'child_sanitize_check',
 	));
-	$wp_customize->add_control('tkctrl-' . $id, array(
+	$wp_customize->add_control('kpctrl-' . $id, array(
 		'type' => 'checkbox',
 		'settings' => $id,
 		'section' => $section,
@@ -749,7 +749,7 @@ Default: ', 'kuiper-twentyseventeen') . $def[$id],
 		'default' => $def[$id],
 		'sanitize_callback' => 'child_sanitize_css_size',
 	));
-	$wp_customize->add_control('tkctrl-' . $id, array(
+	$wp_customize->add_control('kpctrl-' . $id, array(
 		'type' => 'text',
 		'settings' => $id,
 		'section' => $section,
@@ -763,7 +763,7 @@ Default: ', 'kuiper-twentyseventeen') . $def[$id],
 		'default' => $def[$id],
 		'sanitize_callback' => 'child_sanitize_check',
 	));
-	$wp_customize->add_control('tkctrl-' . $id, array(
+	$wp_customize->add_control('kpctrl-' . $id, array(
 		'type' => 'checkbox',
 		'settings' => $id,
 		'section' => $section,
@@ -775,7 +775,7 @@ Default: ', 'kuiper-twentyseventeen') . $def[$id],
 		'default' => $def[$id],
 		'sanitize_callback' => 'child_sanitize_check',
 	));
-	$wp_customize->add_control('tkctrl-' . $id, array(
+	$wp_customize->add_control('kpctrl-' . $id, array(
 		'type' => 'checkbox',
 		'settings' => $id,
 		'section' => $section,
@@ -788,7 +788,7 @@ Default: ', 'kuiper-twentyseventeen') . $def[$id],
 		'default' => $def[$id],
 		'sanitize_callback' => 'child_sanitize_css_size',
 	));
-	$wp_customize->add_control('tkctrl-' . $id, array(
+	$wp_customize->add_control('kpctrl-' . $id, array(
 		'type' => 'text',
 		'settings' => $id,
 		'section' => $section,
@@ -802,7 +802,7 @@ Default: ', 'kuiper-twentyseventeen') . $def[$id],
 		'default' => $def[$id],
 		'sanitize_callback' => 'child_sanitize_check',
 	));
-	$wp_customize->add_control('tkctrl-' . $id, array(
+	$wp_customize->add_control('kpctrl-' . $id, array(
 		'type' => 'checkbox',
 		'settings' => $id,
 		'section' => $section,
@@ -814,7 +814,7 @@ Default: ', 'kuiper-twentyseventeen') . $def[$id],
 		'default' => $def[$id],
 		'sanitize_callback' => 'child_sanitize_check',
 	));
-	$wp_customize->add_control('tkctrl-' . $id, array(
+	$wp_customize->add_control('kpctrl-' . $id, array(
 		'type' => 'checkbox',
 		'settings' => $id,
 		'section' => $section,
@@ -827,7 +827,7 @@ Default: ', 'kuiper-twentyseventeen') . $def[$id],
 		'default' => $def[$id],
 		'sanitize_callback' => 'child_sanitize_css_size',
 	));
-	$wp_customize->add_control('tkctrl-' . $id, array(
+	$wp_customize->add_control('kpctrl-' . $id, array(
 		'type' => 'text',
 		'settings' => $id,
 		'section' => $section,
@@ -841,7 +841,7 @@ Default: ', 'kuiper-twentyseventeen') . $def[$id],
 		'default' => $def[$id],
 		'sanitize_callback' => 'child_sanitize_check',
 	));
-	$wp_customize->add_control('tkctrl-' . $id, array(
+	$wp_customize->add_control('kpctrl-' . $id, array(
 		'type' => 'checkbox',
 		'settings' => $id,
 		'section' => $section,
@@ -853,7 +853,7 @@ Default: ', 'kuiper-twentyseventeen') . $def[$id],
 		'default' => $def[$id],
 		'sanitize_callback' => 'child_sanitize_check',
 	));
-	$wp_customize->add_control('tkctrl-' . $id, array(
+	$wp_customize->add_control('kpctrl-' . $id, array(
 		'type' => 'checkbox',
 		'settings' => $id,
 		'section' => $section,
@@ -873,7 +873,7 @@ Default: ', 'kuiper-twentyseventeen') . $def[$id],
 		'default' => $def[$id],
 		'sanitize_callback' => 'child_sanitize_text',
 	));
-	$wp_customize->add_control('tkctrl-' . $id, array(
+	$wp_customize->add_control('kpctrl-' . $id, array(
 		'settings' => $id,
 		'section' => $section,
 		'type' => 'text',
@@ -887,7 +887,7 @@ Leave blank to use default body font.', 'kuiper-twentyseventeen'),
 		'default' => $def[$id],
 		'sanitize_callback' => 'child_sanitize_css_size',
 	));
-	$wp_customize->add_control('tkctrl-' . $id, array(
+	$wp_customize->add_control('kpctrl-' . $id, array(
 		'type' => 'text',
 		'settings' => $id,
 		'section' => $section,
@@ -901,7 +901,7 @@ Default: ', 'kuiper-twentyseventeen') . $def[$id],
 		'default' => $def[$id],
 		'sanitize_callback' => 'child_sanitize_text',
 	));
-	$wp_customize->add_control('tkctrl-' . $id, array(
+	$wp_customize->add_control('kpctrl-' . $id, array(
 		'settings' => $id,
 		'section' => $section,
 		'type' => 'text',
@@ -915,7 +915,7 @@ Leave blank to use default body font.', 'kuiper-twentyseventeen'),
 		'default' => $def[$id],
 		'sanitize_callback' => 'child_sanitize_css_size',
 	));
-	$wp_customize->add_control('tkctrl-' . $id, array(
+	$wp_customize->add_control('kpctrl-' . $id, array(
 		'type' => 'text',
 		'settings' => $id,
 		'section' => $section,
@@ -929,7 +929,7 @@ Default: ', 'kuiper-twentyseventeen') . $def[$id],
 		'default' => $def[$id],
 		'sanitize_callback' => 'child_sanitize_text',
 	));
-	$wp_customize->add_control('tkctrl-' . $id, array(
+	$wp_customize->add_control('kpctrl-' . $id, array(
 		'settings' => $id,
 		'section' => $section,
 		'type' => 'text',
@@ -951,7 +951,7 @@ Leave blank to use default body font.', 'kuiper-twentyseventeen'),
 		'default' => $def[$id],
 		'sanitize_callback' => 'child_sanitize_css_size',
 	));
-	$wp_customize->add_control('tkctrl-' . $id, array(
+	$wp_customize->add_control('kpctrl-' . $id, array(
 		'type' => 'text',
 		'settings' => $id,
 		'section' => $section,
@@ -965,7 +965,7 @@ Default: ', 'kuiper-twentyseventeen') . $def[$id],
 		'default' => $def[$id],
 		'sanitize_callback' => 'child_sanitize_check',
 	));
-	$wp_customize->add_control('tkctrl-' . $id, array(
+	$wp_customize->add_control('kpctrl-' . $id, array(
 		'type' => 'checkbox',
 		'settings' => $id,
 		'section' => $section,
@@ -977,7 +977,7 @@ Default: ', 'kuiper-twentyseventeen') . $def[$id],
 		'default' => $def[$id],
 		'sanitize_callback' => 'child_sanitize_check',
 	));
-	$wp_customize->add_control('tkctrl-' . $id, array(
+	$wp_customize->add_control('kpctrl-' . $id, array(
 		'type' => 'checkbox',
 		'settings' => $id,
 		'section' => $section,
@@ -989,7 +989,7 @@ Default: ', 'kuiper-twentyseventeen') . $def[$id],
 		'default' => $def[$id],
 		'sanitize_callback' => 'child_sanitize_check',
 	));
-	$wp_customize->add_control('tkctrl-' . $id, array(
+	$wp_customize->add_control('kpctrl-' . $id, array(
 		'type' => 'checkbox',
 		'settings' => $id,
 		'section' => $section,
@@ -1001,7 +1001,7 @@ Default: ', 'kuiper-twentyseventeen') . $def[$id],
 		'default' => $def[$id],
 		'sanitize_callback' => 'child_sanitize_transform',
 	));
-	$wp_customize->add_control('tkctrl-' . $id, array(
+	$wp_customize->add_control('kpctrl-' . $id, array(
 		'settings' => $id,
 		'section' => $section,
 		'type' => 'select',
@@ -1015,7 +1015,7 @@ Default: ', 'kuiper-twentyseventeen') . $def[$id],
 		'default' => $def[$id],
 		'sanitize_callback' => 'child_sanitize_css_size',
 	));
-	$wp_customize->add_control('tkctrl-' . $id, array(
+	$wp_customize->add_control('kpctrl-' . $id, array(
 		'type' => 'text',
 		'settings' => $id,
 		'section' => $section,
@@ -1037,7 +1037,7 @@ Default: ', 'kuiper-twentyseventeen') . $def[$id],
 		'default' => $def[$id],
 		'sanitize_callback' => 'child_sanitize_text',
 	));
-	$wp_customize->add_control('tkctrl-' . $id, array(
+	$wp_customize->add_control('kpctrl-' . $id, array(
 		'settings' => $id,
 		'section' => $section,
 		'type' => 'text',
@@ -1050,7 +1050,7 @@ Default: ', 'kuiper-twentyseventeen') . $def[$id],
 		'default' => $def[$id],
 		'sanitize_callback' => 'child_sanitize_css_size',
 	));
-	$wp_customize->add_control('tkctrl-' . $id, array(
+	$wp_customize->add_control('kpctrl-' . $id, array(
 		'type' => 'text',
 		'settings' => $id,
 		'section' => $section,
@@ -1072,7 +1072,7 @@ function child_get_fonts_inline_css($mods) {
 	$sz = child_css_size($mods[CHILD_MOD_FONT_BODY_SIZE]);
 	$lh = child_css_line_height($mods[CHILD_MOD_FONT_LINE_HEIGHT]);
 	$sp = 'letter-spacing:' . $mods[CHILD_MOD_FONT_LETTER_SPACING] . ';';
-	
+
 $css .= <<<CSS
 	html,
 	body,
@@ -1097,10 +1097,10 @@ $css .= <<<CSS
 	.entry-title,
 	h2.widget-title {
  		{$sp}
-	}	
+	}
 CSS;
-	
-	
+
+
 	// Header
 	$fn = child_css_family($mods[CHILD_MOD_FONT_HEADER_NAME]);
 $css .= <<<CSS
@@ -1113,13 +1113,13 @@ CSS;
 	$wt = child_css_weight($mods[CHILD_MOD_FONT_HEADER_BOLD]);
 	$st = child_css_style($mods[CHILD_MOD_FONT_HEADER_ITAL]);
 	$sp = child_css_spacing($mods[CHILD_MOD_FONT_HEADER_SPACED]);
-	
+
 $css .= <<<CSS
 	.site-title {
 		{$sz} {$wt} {$st} {$sp}
 	}
 CSS;
-	
+
 	$sz = child_css_size($mods[CHILD_MOD_FONT_TAGLINE_SIZE]);
 	$wt = child_css_weight($mods[CHILD_MOD_FONT_TAGLINE_BOLD]);
 	$st = child_css_style($mods[CHILD_MOD_FONT_TAGLINE_ITAL]);
@@ -1146,7 +1146,7 @@ CSS;
 	$fn = child_css_family($mods[CHILD_MOD_FONT_ENTRY_NAME], true);
 $css .= <<<CSS
 	.entry-header .entry-title,
-	.page-header .page-title {		
+	.page-header .page-title {
 		{$fn}
 	}
 CSS;
@@ -1155,7 +1155,7 @@ CSS;
 	$sz = child_css_size($mods[CHILD_MOD_FONT_POST_SIZE], true);
 	$wt = child_css_weight($mods[CHILD_MOD_FONT_POST_BOLD], true);
 	$st = child_css_style($mods[CHILD_MOD_FONT_POST_ITAL], true);
-	$sp = child_css_spacing(false, true);	
+	$sp = child_css_spacing(false, true);
 $css .= <<<CSS
 	.entry-header .entry-title {
 		{$sz} {$wt} {$st} {$sp}
@@ -1167,7 +1167,7 @@ CSS;
 	$sz = child_css_size($mods[CHILD_MOD_FONT_PAGE_SIZE], true);
 	$wt = child_css_weight($mods[CHILD_MOD_FONT_PAGE_BOLD], true);
 	$st = child_css_style($mods[CHILD_MOD_FONT_PAGE_ITAL], true);
-	$sp = child_css_spacing($mods[CHILD_MOD_FONT_PAGE_SPACED], true);	
+	$sp = child_css_spacing($mods[CHILD_MOD_FONT_PAGE_SPACED], true);
 $css .= <<<CSS
 	.page .entry-header .entry-title {
 		{$sz}
@@ -1225,7 +1225,7 @@ $css .= <<<CSS
 		{$sz} {$wt} {$st}
 	}
 CSS;
-	
+
 	$sz = child_css_size($mods[CHILD_MOD_FONT_H2_SIZE]);
 	$wt = child_css_weight($mods[CHILD_MOD_FONT_H2_BOLD]);
 	$st = child_css_style($mods[CHILD_MOD_FONT_H2_ITAL]);
@@ -1234,7 +1234,7 @@ $css .= <<<CSS
 		{$sz} {$wt} {$st}
 	}
 CSS;
-	
+
 	$sz = child_css_size($mods[CHILD_MOD_FONT_H3_SIZE]);
 	$wt = child_css_weight($mods[CHILD_MOD_FONT_H3_BOLD]);
 	$st = child_css_style($mods[CHILD_MOD_FONT_H3_ITAL]);
@@ -1243,7 +1243,7 @@ $css .= <<<CSS
 		{$sz} {$wt} {$st}
 	}
 CSS;
-	
+
 	$sz = child_css_size($mods[CHILD_MOD_FONT_H4_SIZE]);
 	$wt = child_css_weight($mods[CHILD_MOD_FONT_H4_BOLD]);
 	$st = child_css_style($mods[CHILD_MOD_FONT_H4_ITAL]);
@@ -1252,7 +1252,7 @@ $css .= <<<CSS
 		{$sz} {$wt} {$st}
 	}
 CSS;
-	
+
 	$sz = child_css_size($mods[CHILD_MOD_FONT_H5_SIZE]);
 	$wt = child_css_weight($mods[CHILD_MOD_FONT_H5_BOLD]);
 	$st = child_css_style($mods[CHILD_MOD_FONT_H5_ITAL]);
@@ -1261,7 +1261,7 @@ $css .= <<<CSS
 		{$sz} {$wt} {$st}
 	}
 CSS;
-	
+
 	$sz = child_css_size($mods[CHILD_MOD_FONT_H6_SIZE]);
 	$wt = child_css_weight($mods[CHILD_MOD_FONT_H6_BOLD]);
 	$st = child_css_style($mods[CHILD_MOD_FONT_H6_ITAL]);
@@ -1289,6 +1289,10 @@ $css .= <<<CSS
 	tt,
 	var,
 	samp {
+		{$fn}
+	}
+	pre code,
+	.wp-block-code code {
 		{$fn} {$sz}
 	}
 CSS;
@@ -1299,7 +1303,7 @@ $css .= <<<CSS
 		{$fn}
 	}
 CSS;
-	
+
 	// Widget
 	$sz = child_css_size($mods[CHILD_MOD_FONT_WIDGET_TITLE_SIZE], true);
 	$wt = child_css_weight($mods[CHILD_MOD_FONT_WIDGET_TITLE_BOLD], true);
@@ -1318,7 +1322,7 @@ $css .= <<<CSS
 		{$sz}
 	}
 CSS;
-	
+
 	// Footer
 	$fn = child_css_family($mods[CHILD_MOD_FONT_FOOTER_NAME]);
 	$sz = child_css_size($mods[CHILD_MOD_FONT_FOOTER_SIZE]);
@@ -1327,56 +1331,56 @@ $css .= <<<CSS
 		{$fn} {$sz}
 	}
 CSS;
-	
+
 	return $css;
 }
 //-----------------------------------------------------------------------------
 function child_css_family($s, $important = false) {
-	
-	if (!empty($s)) {
-		
-		if ($important) {
-			$s .= ' !important';
-		}
-		
-		return 'font-family:' . $s . ';';
-	}
-	
-	return '';
-}
-//-----------------------------------------------------------------------------
-function child_css_size($s, $important = false) {
-	
+
 	if (!empty($s)) {
 
 		if ($important) {
 			$s .= ' !important';
 		}
-		
+
+		return 'font-family:' . $s . ';';
+	}
+
+	return '';
+}
+//-----------------------------------------------------------------------------
+function child_css_size($s, $important = false) {
+
+	if (!empty($s)) {
+
+		if ($important) {
+			$s .= ' !important';
+		}
+
 		return 'font-size:' . $s . ';';
 	}
-	
+
 	return '';
 }
 //-----------------------------------------------------------------------------
 function child_css_line_height($s, $important = false) {
-	
+
 	if (!empty($s)) {
-		
+
 		if ($important) {
 			$s .= ' !important';
 		}
 
 		return 'line-height:' . $s . ';';
 	}
-	
+
 	return '';
 }
 //-----------------------------------------------------------------------------
 function child_css_spacing($spaced, $important = false) {
 
 	$i = '';
-	
+
 	if ($important) {
 		$i = ' !important';
 	}
@@ -1390,9 +1394,9 @@ function child_css_spacing($spaced, $important = false) {
 }
 //-----------------------------------------------------------------------------
 function child_css_weight($bold, $important = false) {
-	
+
 	$i = '';
-	
+
 	if ($important) {
 		$i = ' !important';
 	}
@@ -1400,22 +1404,22 @@ function child_css_weight($bold, $important = false) {
 	if ($bold) {
 		return 'font-weight:bold' . $i . ';';
 	}
-	
+
 	return 'font-weight:normal' . $i . ';';
 }
 //-----------------------------------------------------------------------------
 function child_css_style($ital, $important = false) {
 
 	$i = '';
-	
+
 	if ($important) {
 		$i = ' !important';
 	}
-	
+
 	if ($ital) {
 		return 'font-style:italic' . $i . ';';
 	}
-	
+
 	return 'font-style:normal' . $i . ';';
 }
 //-----------------------------------------------------------------------------

@@ -1,5 +1,5 @@
 body {
-	font-family: "Segoe UI", Roboto, Verdana, "Dejavu Sans", sans-serif;
+	font-family: sans-serif;
 }
 
 h1,
@@ -50,14 +50,14 @@ kbd,
 samp,
 tt,
 var {
-	font-family: "Courier New", Courier, monospace;
+	font-family: monospace;
 	line-height: normal;
 }
 
 code,
 kbd,
 tt {
-	font-family: Consolas, "Courier New", Courier, monospace;
+	font-family: monospace;
 	line-height: normal;
 }
 
@@ -66,8 +66,13 @@ var {
 }
 
 blockquote {
-	font-family: Georgia, "Times New Roman", serif;
+	font-family: serif;
 	line-height: normal;
+}
+
+.wp-block-quote cite, .wp-block-quote footer {
+	margin-top: 0;
+	margin-bottom: 1em;
 }
 
 .wp-block-button .wp-block-button__link {
