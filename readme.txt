@@ -15,9 +15,6 @@ KUIPER Twenty Seventeen is a highly customizable theme for WordPress. It is a ch
 enormously popular Twenty Seventeen but, unlike the parent, it allows you to extend the page width,
 customize fonts and colors, and change how the "Featured Image" is displayed.
 
-Out of the box, KUIPER Twenty Seventeen overrides the parent theme to default to websafe fonts.
-However, you can easily specify links to web-font style sheets.
-
 The theme allows you to:
 
 o Extend the maximum page width.
